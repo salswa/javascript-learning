@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascipt Lessons</title>
+
+    <!-- <link href="
+    https://cdn.jsdelivr.net/npm/prismjs@v1.30.0/themes/prism.min.css
+    " rel="stylesheet"> -->
+    <link href="style.css" rel="stylesheet" />
+    <style>
+      .container {
+        display: flex;
+        padding: 0 15px;
+      }
+      .topics {
+        width: 30%;
+      }
+      .code-preview {
+        width: 70%;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+        .topics {
+          width: 100%;
+          min-height: 20vh;
+          overflow: auto;
+        }
+        .code-preview {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="topics">
+        <h1>Concept</h1>
+        <ul class="item-list">
+          <li class="item">this</li>
+          <li class="item">call, apply, bind</li>
+        </ul>
+      </section>
+      <section class="code-preview">
+        <pre><code  class="language-javascript" id="code-block"></code></pre>
+      </section>
+    </div>
+
+    <script>
+      fetch("this.js")
+        .then((response) => response.text())
+        .then((code) => {
+          const codeBlock = document.getElementById("code-block");
+          codeBlock.textContent = code;
+        })
+        .catch((err) => console.error("Failed to load file1.js:", err));
+    </script>
+
+    <script src="./this.js"></script>
+    <script>
+      console.log(`this.js end`);
+    </script>
+
+    <script src="./call_apply_bind.js"></script>
+    <script>
+      const scripts = document.getElementsByTagName("script");
+      console.log(scripts);
+
+      for (i = 0; i < scripts.length - 1; i++) {
+        const topic = scripts[i].attributes[0]?.nodeValue;
+        //console.log(topic, scripts[i]);
+        if (topic) {
+          const e = document.createElement("script");
+          e.textContent = `console.log('${topic}')`;
+          //scripts[i].insertAdjacentElement('beforebegin',e);
+        }
+      }
+    </script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/prismjs@v1.x/components/prism-core.min.js
+    "></script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
+  </body>
+</html>
