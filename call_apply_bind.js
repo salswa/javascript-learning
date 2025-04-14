@@ -1,7 +1,3 @@
-console.log(
-  "%c START | Call Apply Bind ",
-  "color: black; font-style: italic; background-color: pink;padding: 2px; min-width: 300px"
-);
 const a = ["mango", "apple"];
 console.log(a, `${a}`); //['mango', 'apple'] 'mango,apple'
 
@@ -16,7 +12,7 @@ console.log(`${person}`); //[object Object]
 
 const person1 = {
   firstName: "Swati",
-  lastName: "Gautam",
+  lastName: "G",
   printFullName: function (greeting, country) {
     console.log(
       `${greeting}, this is ${this.firstName} ${this.lastName} from ${country}`
@@ -24,7 +20,7 @@ const person1 = {
   },
 };
 
-person1.printFullName("hello", "India"); //hello, this is Swati Gautam from India
+person1.printFullName("hello", "India"); //hello, this is Swati G from India
 
 person2 = {
   firstName: "Chris",
@@ -47,9 +43,6 @@ person1.printFullName.apply(person2, ["Hai", "China"]); //Hai, this is Chris Ben
 //debugger;
 const result = person1.printFullName.bind(person2, ...["hello", "UK"]);
 
-console.log(result.name); //hello, this is Chris Ben from UK undefined
-
-console.log(
-  "%c END | Call Apply Bind ",
-  "color: black; font-style: italic; background-color: pink;padding: 2px"
-);
+console.log(result.name);
+/** hello, this is Chris Ben from UK
+ * undefined*/
