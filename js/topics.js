@@ -7,6 +7,10 @@
 
 const topics = [
   {
+    path: "objects.js",
+    title: "Objects",
+  },
+  {
     path: "this.js",
     title: "this",
   },

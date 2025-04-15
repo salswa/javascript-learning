@@ -145,3 +145,29 @@ pre[class*="language-"] {
 .token.entity {
   cursor: help;
 }
+
+/* Custom CSS */
+.container {
+  display: flex;
+  padding: 0 15px;
+}
+.topics {
+  width: 30%;
+}
+.code-preview {
+  width: 70%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .topics {
+    width: 100%;
+    min-height: 20vh;
+    overflow: auto;
+  }
+  .code-preview {
+    width: 100%;
+  }
+}
